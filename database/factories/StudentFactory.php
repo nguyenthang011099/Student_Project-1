@@ -7,18 +7,24 @@
 use Faker\Factory as Faker;
 
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Student::class, function ( $faker) {
     $faker= Faker::create('vi_VN');
+    $lastName= $faker->lastName;
+    $midleName= $faker->middleNameMale;
+    $firstName=$faker->firstName;
+    $studentid= $faker->numberBetween(20171010,20174000);
+    $email= $firstName.$studentid."@sis.hust.edu.vn";
+    $password= "********";
     return [
 
-        'MSSV'=> $faker->numberBetween(20171010,20174000),
-        'FirstName'=>$faker->firstName,
-        'LastName'=>$faker->lastName,
+        'Student ID'=> $studentid,
+        'FirstName'=>$firstName." ".$midleName,
+        'LastName'=>$lastName,
         'Telephone'=>$faker->phoneNumber,
         'Address'=>$faker->address,
-        'Email'=>$faker->email,
-
-
+        'Email'=>$email ,
+        'Password'=>$password,
 
     ];
 });
+
