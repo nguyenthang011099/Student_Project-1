@@ -34,6 +34,7 @@
 
 <table id="t01">
     <tr>
+        <th>Student ID</th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Telephone</th>
@@ -43,7 +44,17 @@
     </tr>
 
 
-
+    @foreach($students as $s)
+        <tr>
+            <td>{{$s['Student ID']}}</td>
+            <td>{{$s['FirstName']}}</td>
+            <td>{{$s['LastName']}}</td>
+            <td>{{$s['Telephone']}}</td>
+            <td>{{$s['Address']}}</td>
+            <td>{{$s['Email']}}</td>
+            <td>{{$s['PassWord']}}</td>
+        </tr>
+    @endforeach
 </table>
 
 </body>

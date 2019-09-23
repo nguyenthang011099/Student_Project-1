@@ -9,9 +9,8 @@ class StudentController extends Controller
 {
         public function list(){
         //$students=Student::all();
-        $students =DB::table('students')
-            ->orderBy('firstName')
-            ->get();
+        $students =DB::table('students');
+
         return view('list',['students'=>$students]);
     }
 }
