@@ -13,14 +13,18 @@ $factory->define(App\Student::class, function ( $faker) {
     $midleName= $faker->middleNameMale;
     $firstName=$faker->firstName;
     $studentid= $faker->numberBetween(20171010,20174000);
-    $email= $firstName.$studentid."@sis.hust.edu.vn";
+
+    $phoneNumber= $faker->numberBetween(32343451,87999999);
+
+    $email= $lastName.$studentid."@sis.hust.edu.vn";
     $password= "********";
+
     return [
 
         'Student ID'=> $studentid,
         'FirstName'=>$firstName." ".$midleName,
         'LastName'=>$lastName,
-        'Telephone'=>$faker->phoneNumber,
+        'Telephone'=>"+84".$phoneNumber,
         'Address'=>$faker->address,
         'Email'=>$email ,
         'Password'=>$password,
